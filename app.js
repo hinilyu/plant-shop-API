@@ -19,6 +19,7 @@ const categoriesRouter = require("./routes/category");
 const connectDB = require("./db/connect");
 
 // middleware setting
+app.set("trust proxy", 1);
 app.use(express.static("public"));
 app.use(
   rateLimiter({
