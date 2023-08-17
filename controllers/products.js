@@ -6,7 +6,7 @@ const getAllProducts = async (req, res) => {
   const queryObject = {};
 
   // filter category
-  if (!category == "" && category != undefined) {
+  if (!category == "" && category != "undefined") {
     queryObject.category = category;
   }
 
