@@ -24,7 +24,7 @@ const getAllProducts = async (req, res) => {
   var products = await result;
 
   products = products.map((product) => {
-    product.image = `http://localhost:8080/images/${product.image}`;
+    product.image = `https://plant-shop-backend.onrender.com/images/${product.image}`;
     return product;
   });
 
