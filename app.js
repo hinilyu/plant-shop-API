@@ -30,7 +30,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(
   cors({
-    origin: "*",
+    origin: "https://plant-shop-frontend.web.app/",
   })
 );
 app.use(xss());
