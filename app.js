@@ -48,7 +48,7 @@ app.get("/", (req, res) => {
 // routes
 app.use("/api/v1/products", productsRouter);
 app.use("/api/v1/products/categories", categoriesRouter);
-app.use("/payment", paymentRouter);
+app.use("/checkout", paymentRouter);
 
 const port = process.env.PORT || 8080;
 
