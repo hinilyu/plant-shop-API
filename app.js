@@ -6,6 +6,7 @@ const helmet = require("helmet");
 const cors = require("cors");
 const xss = require("xss-clean");
 const rateLimiter = require("express-rate-limit");
+const bodyparser = require("body-parser");
 
 // express app
 const express = require("express");
@@ -14,6 +15,7 @@ const app = express();
 // router
 const productsRouter = require("./routes/products");
 const categoriesRouter = require("./routes/category");
+const paymentRouter = require("./routes/payment");
 
 // connect to database
 const connectDB = require("./db/connect");
@@ -35,6 +37,8 @@ app.use(
   })
 );
 app.use(xss());
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.json());
 
 // get method homepage test
 app.get("/", (req, res) => {
@@ -44,6 +48,7 @@ app.get("/", (req, res) => {
 // routes
 app.use("/api/v1/products", productsRouter);
 app.use("/api/v1/products/categories", categoriesRouter);
+app.use("/payment", paymentRouter);
 
 const port = process.env.PORT || 8080;
 

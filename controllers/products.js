@@ -1,4 +1,3 @@
-const { log } = require("console");
 const Product = require("../models/product");
 
 const getAllProducts = async (req, res) => {
